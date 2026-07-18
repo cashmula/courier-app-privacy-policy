@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Courier</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e6e6e6; background: #12141a; }
+    a { color: #8ab4ff; }
+  }
+  h1 { font-size: 1.6rem; margin-bottom: 0.25rem; }
+  h2 { font-size: 1.15rem; margin-top: 2.2rem; }
+  .effective-date { color: #666; font-size: 0.95rem; margin-top: 0; }
+  @media (prefers-color-scheme: dark) { .effective-date { color: #9a9a9a; } }
+  ul { padding-left: 1.3rem; }
+  li { margin-bottom: 0.4rem; }
+</style>
+</head>
+<body>
+
+<h1>Privacy Policy — Courier (Business, Driver, and Customer apps)</h1>
+<p class="effective-date"><strong>Effective date:</strong> July 18, 2026</p>
+
+<p>This policy covers three related apps published by hafmula-group:
+<strong>Courier — Business</strong>, <strong>Courier — Driver</strong>, and
+<strong>Courier — Track Your Delivery</strong> (together, "the Apps"). They
+share one backend, so this single policy covers all three.</p>
+
+<h2>Who we are</h2>
+<p>The Apps are operated by <strong>hafmula-group</strong>. For any question
+about this policy or your data, contact
+<strong><a href="mailto:hafmula-group@yahoo.com">hafmula-group@yahoo.com</a></strong>.</p>
+
+<h2>Data we collect</h2>
+<p><strong>Account information.</strong> When you create an account, we
+collect your email address and password. Passwords are never stored in
+plain text — our authentication provider (Supabase) stores only a securely
+hashed form.</p>
+
+<p><strong>Profile information</strong>, depending on your role:</p>
+<ul>
+  <li><em>Business accounts:</em> business name, business address, phone number.</li>
+  <li><em>Courier accounts:</em> full name, phone number, vehicle type, and an
+  availability status (available / busy / offline) used internally to route
+  jobs.</li>
+  <li><em>Customer accounts:</em> full name, phone number.</li>
+</ul>
+
+<p><strong>Order information.</strong> Pickup address, drop-off address,
+optional package notes, and the order's status history (e.g. pending →
+assigned → picked up → delivered), timestamped automatically as it
+changes.</p>
+
+<p><strong>Location information.</strong> While a courier has an active
+delivery, the Driver app records the courier's live GPS coordinates every
+few seconds so the order can be tracked. We store only the <em>current</em>
+position — not a location history — and it is overwritten on each update.
+Location is only collected while the Driver app is actively broadcasting for
+a delivery in progress; it is not collected in the background otherwise.</p>
+
+<p>We do <strong>not</strong> use advertising or analytics SDKs of any kind
+— no ad networks, no analytics trackers, no crash-reporting services. The
+only data we collect is what's listed above, collected directly through your
+use of the Apps.</p>
+
+<h2>How we use your data</h2>
+<ul>
+  <li>To create and secure your account.</li>
+  <li>To create, assign, and fulfill delivery orders between businesses,
+  couriers, and customers.</li>
+  <li>To show live delivery tracking to the business and customer for an
+  order in progress.</li>
+  <li>To maintain a status history for each order (for support and dispute
+  resolution).</li>
+</ul>
+
+<h2>Who can see your data</h2>
+<p>Access is restricted by role at the database level (not just in the app
+UI):</p>
+<ul>
+  <li>A business can only see its own orders.</li>
+  <li>A courier can only see orders assigned to them.</li>
+  <li>A customer can only see their own orders.</li>
+  <li>Currently, businesses and customers do <strong>not</strong> see a
+  courier's name or phone number inside the Apps — only the order status
+  and, once a courier is assigned, that courier's live location for tracking
+  purposes.</li>
+  <li>A courier's live location can only be <em>written</em> by that
+  courier's own authenticated device — no one else can submit a position on
+  their behalf. It can only be <em>viewed</em> by the business or customer
+  who actually has an active order with that courier.</li>
+</ul>
+
+<h2>Where your data is stored</h2>
+<p>We use two service providers to store data on our behalf, and do not
+sell or share your data with anyone else:</p>
+<ul>
+  <li><strong>Supabase</strong> — stores account credentials, profile
+  information, and order data (PostgreSQL database with row-level
+  security).</li>
+  <li><strong>Firebase (Google) Realtime Database</strong> — stores only a
+  courier's current live position while a delivery is active.</li>
+</ul>
+
+<h2>Data retention and deletion</h2>
+<p>We retain account and order data for as long as your account is active.
+The Apps do not currently have a self-service "delete my account" option.
+To request access to, correction of, or deletion of your data, email
+<strong><a href="mailto:hafmula-group@yahoo.com">hafmula-group@yahoo.com</a></strong>
+and we will act on your request.</p>
+
+<h2>Children's privacy</h2>
+<p>The Apps are not directed at children, and we do not knowingly collect
+data from children.</p>
+
+<h2>Changes to this policy</h2>
+<p>If this policy changes, we will update the effective date above.</p>
+
+<h2>Contact</h2>
+<p><a href="mailto:hafmula-group@yahoo.com">hafmula-group@yahoo.com</a></p>
+
+</body>
+</html>
