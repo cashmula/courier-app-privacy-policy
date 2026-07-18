@@ -30,7 +30,7 @@
 <body>
 
 <h1>Privacy Policy — Courier (Business, Driver, and Customer apps)</h1>
-<p class="effective-date"><strong>Effective date:</strong> July 18, 2026</p>
+<p class="effective-date"><strong>Effective date:</strong> July 19, 2026</p>
 
 <p>This policy covers three related apps published by hafmula-group:
 <strong>Courier — Business</strong>, <strong>Courier — Driver</strong>, and
@@ -57,17 +57,35 @@ hashed form.</p>
   <li><em>Customer accounts:</em> full name, phone number.</li>
 </ul>
 
-<p><strong>Order information.</strong> Pickup address, drop-off address,
-optional package notes, and the order's status history (e.g. pending →
-assigned → picked up → delivered), timestamped automatically as it
-changes.</p>
+<p><strong>Merchant information</strong>, for business accounts that opt in
+to being listed: category, description, a photo, and an approximate map
+location, plus the items on their menu (name, description, price, photo).</p>
 
-<p><strong>Location information.</strong> While a courier has an active
-delivery, the Driver app records the courier's live GPS coordinates every
-few seconds so the order can be tracked. We store only the <em>current</em>
-position — not a location history — and it is overwritten on each update.
-Location is only collected while the Driver app is actively broadcasting for
-a delivery in progress; it is not collected in the background otherwise.</p>
+<p><strong>Order information.</strong> Pickup address, drop-off address,
+optional package notes, items ordered (for orders placed directly with a
+listed merchant), and the order's status history (e.g. pending → assigned
+→ picked up → delivered), timestamped automatically as it changes.</p>
+
+<p><strong>Ratings and reviews.</strong> Once an order is delivered, the
+customer may rate the business and the courier (1-5 stars, optional
+comment). A rating is tied to the specific order and the two people
+involved in it.</p>
+
+<p><strong>Push notification tokens.</strong> A device identifier used to
+deliver notifications about order updates (new job available, order
+accepted, status changes) — not used for anything besides sending these
+notifications, and you can deny notification permission at any time.</p>
+
+<p><strong>Location information.</strong> The Driver app records the
+courier's live GPS coordinates every few seconds whenever the courier has
+toggled themselves "online" (available for jobs) — not only during an
+active delivery — so new orders can be offered to nearby couriers first.
+We store only the <em>current</em> position, never a location history,
+and it is overwritten on each update. Location sharing stops the moment a
+courier toggles themselves offline or signs out. The Business and Track
+Delivery apps may also ask for your device's approximate location, used
+only to sort/display nearby listed merchants — it is not stored or sent
+to us.</p>
 
 <p>We do <strong>not</strong> use advertising or analytics SDKs of any kind
 — no ad networks, no analytics trackers, no crash-reporting services. The
@@ -78,11 +96,17 @@ use of the Apps.</p>
 <ul>
   <li>To create and secure your account.</li>
   <li>To create, assign, and fulfill delivery orders between businesses,
-  couriers, and customers.</li>
+  couriers, and customers, including orders customers place directly with
+  a listed merchant.</li>
   <li>To show live delivery tracking to the business and customer for an
-  order in progress.</li>
+  order in progress, and to offer new orders to nearby available couriers
+  first.</li>
   <li>To maintain a status history for each order (for support and dispute
   resolution).</li>
+  <li>To send push notifications about your own orders/jobs (new job
+  available, order accepted, status changes).</li>
+  <li>To display ratings so businesses, couriers, and customers can see
+  feedback from past orders.</li>
 </ul>
 
 <h2>Who can see your data</h2>
@@ -98,8 +122,14 @@ UI):</p>
   purposes.</li>
   <li>A courier's live location can only be <em>written</em> by that
   courier's own authenticated device — no one else can submit a position on
-  their behalf. It can only be <em>viewed</em> by the business or customer
-  who actually has an active order with that courier.</li>
+  their behalf.</li>
+  <li>A listed business's menu (category, description, photo, items, prices)
+  is visible to anyone using the Apps, the same way it would be on any
+  public storefront.</li>
+  <li>Ratings (star rating and any comment) are visible to any signed-in
+  user of the Apps, not just the two people who were part of that order —
+  this lets customers see a merchant's or courier's reputation before
+  ordering.</li>
 </ul>
 
 <h2>Where your data is stored</h2>
@@ -107,10 +137,12 @@ UI):</p>
 sell or share your data with anyone else:</p>
 <ul>
   <li><strong>Supabase</strong> — stores account credentials, profile
-  information, and order data (PostgreSQL database with row-level
-  security).</li>
-  <li><strong>Firebase (Google) Realtime Database</strong> — stores only a
-  courier's current live position while a delivery is active.</li>
+  information, merchant/order/rating data, and push notification device
+  tokens (PostgreSQL database with row-level security).</li>
+  <li><strong>Firebase (Google)</strong> — Realtime Database stores only a
+  courier's current live position while they're online; Cloud Messaging
+  delivers push notifications to your device using the token described
+  above.</li>
 </ul>
 
 <h2>Data retention and deletion</h2>
